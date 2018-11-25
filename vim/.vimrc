@@ -1,5 +1,8 @@
 " ▓▒░ AKUFOOLZ VIM DOTFILE ░▒▓
 
+" change leader to comma
+let mapleader="\<Space>"
+
 " ▓▒░ VIM-PLUG SETTINGS ░▒▓
 
 " specify directory for plugins
@@ -11,10 +14,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'kien/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'mattn/emmet-vim'
 
 " colorschemes
-Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'arcticicestudio/nord-vim'
 
 " autocomplete
 Plug 'lifepillar/vim-mucomplete'
@@ -26,7 +30,10 @@ Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
 
 " javascript plugins
-Plug 'ternjs/tern_for_vim'
+" Plug 'ternjs/tern_for_vim', { 'for': 'javascript', 'do': 'npm install' }
+Plug '1995eaton/vim-better-javascript-completion'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 
 " initialize plugin system
 call plug#end()
@@ -118,9 +125,6 @@ inoremap jj <ESC>
 " remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-" change leader to comma
-let mapleader=","
-
 " edit vimrc in a new tab
 nnoremap <leader>ev :tabe $MYVIMRC<CR>
 
@@ -134,6 +138,7 @@ nnoremap <leader>s :mksession<CR>
 
 " set vim color scheme + options
 colorscheme dracula
+set background=dark
 hi Normal guibg=NONE ctermbg=NONE
 " colorscheme nord
 " let g:nord_italic_comments = 1
@@ -201,3 +206,15 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" ▓▒░ VIM-JSX SETTINGS ░▒▓
+
+let g:jsx_ext_required = 0
+
+" ▓▒░ VIM-JSX SETTINGS ░▒▓
+
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
