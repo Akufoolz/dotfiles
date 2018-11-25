@@ -60,7 +60,6 @@ set showtabline=2
 
 " wrap lines
 set wrap
-set textwidth=79
 
 " enable linebreaks
 " set linebreak
