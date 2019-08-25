@@ -13,7 +13,7 @@ super + @space
 
 # pywal load
 super + ctrl + alt + w
-	wal -b "#222222" -i ~/wallpapers/ && bspc wm -r
+	wal -b "#2f343f" -i ~/wallpapers/ && bspc wm -r
 
 # make sxhkd reload its configuration files:
 super + Escape
