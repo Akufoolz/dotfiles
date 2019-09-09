@@ -11,9 +11,13 @@ super + @space
 	rofi -combi-modi window,drun -show combi
 	#dmenu_run
 
+# pywal load w/ arc-dark bg color
+super + ctrl + alt + shift + w
+	wal -b "#2f343f" -i ~/wallpapers/ && bspc wm -r
+
 # pywal load
 super + ctrl + alt + w
-	wal -b "#2f343f" -i ~/wallpapers/ && bspc wm -r
+	wal -i ~/wallpapers/ && bspc wm -r
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -133,15 +137,15 @@ super + {Left,Down,Up,Right}
 
 # volume up
 XF86AudioRaiseVolume
-	pulsemixer --id sink-0 --change-volume +10
+	pulsemixer --change-volume +5
 
 # volume down
 XF86AudioLowerVolume
-	pulsemixer --id sink-0 --change-volume -10
+	pulsemixer --change-volume -5
 
 # mute sound
 XF86AudioMute
-	pulsemixer --id sink-0 --toggle-mute
+	pulsemixer --toggle-mute
 
 # mute mic
 XF86AudioMicMute

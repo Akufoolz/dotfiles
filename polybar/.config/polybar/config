@@ -84,7 +84,7 @@ font-0 = Dejavu Sans Mono:size=10;0
 
 modules-left = bspwm
 modules-center = date
-modules-right = eth wlan pulseaudio battery
+modules-right = eth eth2 wlan pulseaudio battery
 ;modules-right = eth memory cpu temperature battery xbacklight volume date 
 ;modules-right = filesystem xbacklight volume xkeyboard memory cpu wlan eth battery temperature date powermenu
 
@@ -267,6 +267,18 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
 
+[module/eth2]
+type = internal/network
+interface = enp0s20u3u1u3
+interval = 3.0
+
+format-connected-underline = ${colors.secondary}
+format-connected-prefix = ""
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected =
+
 [module/eth]
 type = internal/network
 interface = enp0s25
@@ -413,7 +425,7 @@ menu-2-1-exec = menu-open-0
 [module/pulseaudio]
 type = internal/pulseaudio
 
-sink = alsa_output.pci-0000_00_1b.0.analog-stereo
+# sink = alsa_output.pci-0000_00_1b.0.analog-stereo
 
 use-ui-max = false
 
