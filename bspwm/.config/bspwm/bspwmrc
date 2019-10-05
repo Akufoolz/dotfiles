@@ -5,7 +5,8 @@ wal -R &
 /usr/bin/dunst &
 . "${HOME}/.cache/wal/colors.sh"
 
-bspc monitor -d I II III IV V VI VII VIII
+bspc monitor eDP-1 -d I II III IV
+bspc monitor DP-2-2 -d V VI VII VIII
 
 bspc config border_width					8
 bspc config window_gap						16
