@@ -3,6 +3,9 @@
 ! Author: Akufoolz           +
 ! ++++++++++++++++++++++++++++
 
+! Font face and size
+rofi.font: Dejavu Sans Mono 16
+
 ! Disable history
 rofi.disable-history: true
 
