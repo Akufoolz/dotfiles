@@ -1,13 +1,21 @@
 #! /bin/sh
 sxhkd &
+<<<<<<< HEAD
 xsetroot -cursor_name left_ptr
+=======
+>>>>>>> dev
 picom -b -d :0 --focus-exclude '_NET_WM_NAME@:s = "rofi"' &
 wal -R &
 . "${HOME}/.cache/wal/colors.sh"
 
+<<<<<<< HEAD
 #bspc monitor eDP1 -d I II III IV
 #bspc monitor DP-2-2 -d V VI VII VIII
 bspc monitor -d 一 二 三 四
+=======
+bspc monitor eDP1 -d I II III IV
+bspc monitor DP-2-2 -d V VI VII VIII
+>>>>>>> dev
 
 bspc config border_width					8
 bspc config window_gap						16
