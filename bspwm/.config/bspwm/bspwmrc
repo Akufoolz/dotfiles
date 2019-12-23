@@ -1,15 +1,15 @@
 #! /bin/sh
 sxhkd &
-compton -b -d :0 --focus-exclude '_NET_WM_NAME@:s = "rofi"' &
+picom -b -d :0 --focus-exclude '_NET_WM_NAME@:s = "rofi"' &
 wal -R &
-/usr/bin/dunst &
 . "${HOME}/.cache/wal/colors.sh"
 
-bspc monitor eDP-1 -d I II III IV
+bspc monitor eDP1 -d I II III IV
 bspc monitor DP-2-2 -d V VI VII VIII
 
 bspc config border_width					8
 bspc config window_gap						16
+bspc config top_padding						32
 
 bspc config split_ratio						0.50
 bspc config borderless_monocle		true
