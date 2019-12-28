@@ -9,7 +9,6 @@ super + Return
 # program launcher
 super + @space
 	rofi -combi-modi window,drun -show combi
-	#dmenu_run
 
 # pywal load w/ arc-dark bg color
 super + ctrl + alt + shift + w
@@ -156,8 +155,8 @@ XF86AudioMicMute
 #
 
 # brightness up
-XF86MonBrightnessUp
-	light -A 10
+#XF86MonBrightnessUp
+	#light -A 10
 
-XF86MonBrightnessDown
-	light -U 10
+#XF86MonBrightnessDown
+	#light -U 10
