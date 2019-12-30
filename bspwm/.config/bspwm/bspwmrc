@@ -15,22 +15,23 @@ wal -R &
 screens="$(bspc query -M --names)"
 
 case ${#screens[@]} in
-	1) bspc monitor -d  一   二   三   四 ;;
+	#1) bspc monitor -d  一   二   三   四 ;;
+	1) bspc monitor -d " 一 " 二 三 四;;
 	2)
-		bspc monitor ${screens[0]} -d  一   二   三   四 
-		bspc monitor ${screens[1]} -d  五   六   七   八 
+		bspc monitor ${screens[0]} -d " 一 " 二 三 四
+		bspc monitor ${screens[1]} -d " 五 " 六 七 八
 		;;
 	3)
-		bspc monitor ${screens[0]} -d  一   二   三   四 
-		bspc monitor ${screens[1]} -d  五   六   七   八 
-		bspc monitor ${screens[1]} -d  九   十 
+		bspc monitor ${screens[0]} -d " 一 " 二 三 四
+		bspc monitor ${screens[1]} -d " 五 " 六 七 八
+		bspc monitor ${screens[1]} -d " 九 " 十
 		;;
-	*) bspc monitor -d  一   二   三   四 ;;
+	*) bspc monitor -d " 一 " 二 三 四;;
 esac
 
 bspc config border_width					8
 bspc config window_gap						16
-bspc config top_padding						32
+bspc config top_padding						48
 
 bspc config split_ratio						0.50
 bspc config borderless_monocle		true
