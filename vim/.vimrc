@@ -17,9 +17,12 @@ Plug 'tpope/vim-sensible'
 Plug 'kien/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'dracula/vim'
+Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'arcticicestudio/nord-vim'
 Plug 'dylanaraps/wal.vim'
+Plug 'mattn/emmet-vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'Yggdroot/indentLine'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " initialize plugin system
@@ -29,6 +32,10 @@ call plug#end()
 
 " initiate vim-sensible at runtime to allow overwriting
 runtime! plugin/sensible.vim
+
+set term=screen-256color
+set t_ut=
+let g:indentLine_char = '▏'
 
 " adjust backup locations
 set backupdir=.,$HOME/.vimbackups
@@ -79,8 +86,9 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " set vim color scheme + options
 let g:nord_italic_comments = 1
-" colorscheme dracula 
-colorscheme wal
+" colorscheme nord
+colorscheme dracula 
+" colorscheme wal
 
 " fix opacity
 hi Normal guibg=NONE ctermbg=NONE
@@ -103,7 +111,7 @@ endif
 " ░▒▓ LIGHTLINE SETTINGS ▓▒░
 
 let g:lightline = {
-	\ 'colorscheme': 'nord',
+	\ 'colorscheme': 'dracula',
 	\ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
 	\ 'subseparator': { 'left': '▒', 'right': '░' }
 	\ }
@@ -147,9 +155,11 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" Use `[[` and `]]` to navigate diagnostics
+"nmap <silent> [g <Plug>(coc-diagnostic-prev)
+"nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> [[ <Plug>(coc-diagnostic-prev)
+nmap <silent> ]] <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
