@@ -33,9 +33,9 @@ call plug#end()
 " initiate vim-sensible at runtime to allow overwriting
 runtime! plugin/sensible.vim
 
+" fix colorscheme bugs in WSL
 set term=screen-256color
 set t_ut=
-let g:indentLine_char = '▏'
 
 " adjust backup locations
 set backupdir=.,$HOME/.vimbackups
@@ -115,6 +115,9 @@ let g:lightline = {
 	\ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
 	\ 'subseparator': { 'left': '▒', 'right': '░' }
 	\ }
+
+" ░▒▓ INDENTLINE SETTINGS ▓▒░
+let g:indentLine_char = '▏'
 
 " ░▒▓ COC SPECIFIC SETTINGS ▓▒░
 " if hidden is not set, TextEdit might fail.
