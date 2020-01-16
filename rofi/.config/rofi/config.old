@@ -4,11 +4,9 @@
 ! ++++++++++++++++++++++++++++
 
 ! Font face and size
-<<<<<<< HEAD
 rofi.font: Dejavu Sans Mono 14
 =======
 rofi.font: Dejavu Sans Mono 12
->>>>>>> dev
 
 ! Disable history
 rofi.disable-history: true
