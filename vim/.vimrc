@@ -23,6 +23,7 @@ Plug 'dylanaraps/wal.vim'
 Plug 'mattn/emmet-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'Yggdroot/indentLine'
+Plug 'raimondi/delimitmate'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " initialize plugin system
