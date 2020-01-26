@@ -14,9 +14,9 @@ call plug#begin('~/.vim/plugged')
 
 " plugins go here
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'dylanaraps/wal.vim'
@@ -65,7 +65,7 @@ set linebreak
 set tabstop=2 shiftwidth=2
 
 " use spaces instead of tabs
-" set expandtab
+set expandtab
 
 " ignore case when searching
 set ignorecase
@@ -89,8 +89,8 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 " set vim color scheme + options
 let g:nord_italic_comments = 1
 " colorscheme nord
-colorscheme dracula 
-" colorscheme wal
+" colorscheme dracula 
+colorscheme wal
 
 " fix opacity
 hi Normal guibg=NONE ctermbg=NONE
@@ -113,9 +113,16 @@ endif
 " ░▒▓ LIGHTLINE SETTINGS ▓▒░
 
 let g:lightline = {
-	\ 'colorscheme': 'dracula',
+	\ 'colorscheme': 'nord',
 	\ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
-	\ 'subseparator': { 'left': '▒', 'right': '░' }
+	\ 'subseparator': { 'left': '▒', 'right': '░' },
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste' ],
+  \             [ 'gitbranch', 'readonly', 'filename', 'modified'] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'fugitive#head'
+  \ },
 	\ }
 
 " ░▒▓ INDENTLINE SETTINGS ▓▒░
