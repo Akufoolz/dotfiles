@@ -1,7 +1,0 @@
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-* {
-font-size: 11pt !important
-}
-
-#contentAreaContextMenu { margin: 5px 0 0 5px }
