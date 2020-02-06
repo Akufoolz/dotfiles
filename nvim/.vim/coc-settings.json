@@ -1,0 +1,8 @@
+{
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 20,
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "html", "css", "typescript", "typescriptreact", "json", "javascriptreact", "typescript.tsx"],
+  "diagnostic.errorSign": "✕",
+  "diagnostic.warningSign": "△",
+	"diagnostic.infoSign": "◇"
+}
